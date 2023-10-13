@@ -2,15 +2,34 @@ const URL_CURSOS = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/produc
 
 var stringCursos = "";
 
+const footer = document.querySelector("ul.cursosFooter")
+var fragmento = document.createDocumentFragment();
+
+const seletor = document.querySelector("select#cursos")
+
+
 fetch(URL_CURSOS, {
     method: "GET",
 })
     .then(result => result.json())
     .then(({ result }) => {
         result.forEach(task => {
-            stringCursos = stringCursos.concat(task.name, "<br>");
+            stringCursos = stringCursos.concat("• ", task.name, "<br>");
 
+            var li = document.createElement('li');
+            var cursosFooter = document.createElement("a");
+            cursosFooter.textContent = task.name;
+            cursosFooter.setAttribute("href", "#");
+            fragmento.appendChild(li); 
+
+            
+            var opcao = document.createElement("option");
+            opcao.setAttribute("value", task.name);
+            opcao.innerText = task.name; 
+            seletor.appendChild(opcao); 
         });
+        footer.appendChild(fragmento);
+
         var p = document.querySelector("p.description");
         p.innerHTML = stringCursos;
     })
