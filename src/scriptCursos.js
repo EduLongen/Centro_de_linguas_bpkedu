@@ -14,19 +14,20 @@ fetch(URL_CURSOS, {
     .then(result => result.json())
     .then(({ result }) => {
         result.forEach(task => {
-            stringCursos = stringCursos.concat("• ", task.name, "<br>");
+            stringCursos = stringCursos.concat(task.name, "<br>");
 
             var li = document.createElement('li');
             var cursosFooter = document.createElement("a");
             cursosFooter.textContent = task.name;
-            cursosFooter.setAttribute("href", "#");
+            cursosFooter.setAttribute("href", "#"); 
+            li.appendChild(cursosFooter); 
             fragmento.appendChild(li); 
 
-            
+         
             var opcao = document.createElement("option");
-            opcao.setAttribute("value", task.name);
+            opcao.setAttribute("value", task.name); 
             opcao.innerText = task.name; 
-            seletor.appendChild(opcao); 
+            seletor.appendChild(opcao);
         });
         footer.appendChild(fragmento);
 
