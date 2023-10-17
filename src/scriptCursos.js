@@ -7,14 +7,13 @@ var fragmento = document.createDocumentFragment();
 
 const seletor = document.querySelector("select#cursos")
 
-
 fetch(URL_CURSOS, {
     method: "GET",
 })
     .then(result => result.json())
     .then(({ result }) => {
         result.forEach(task => {
-            stringCursos = stringCursos.concat(task.name, "<br>");
+            stringCursos = stringCursos.concat("• ", task.name, "<br>");
 
             var li = document.createElement('li');
             var cursosFooter = document.createElement("a");
