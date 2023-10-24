@@ -356,6 +356,7 @@ span{
 }
 .redes-img img{
     width: 25%;
+    height: 25%;
 }
 
 /* TERCEIRA PAGINA (METODOLOGIA) */
@@ -495,7 +496,7 @@ span{
     flex-direction: column;
 }
 
-.box2{
+/* .box2{
     width: 235px;
     height: 250px;
     background-color: var(--white);
@@ -504,9 +505,9 @@ span{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} 
 
-.box3{
+/* .box3{
     width: 235px;
     height: 250px;
     background-color: var(--white);
@@ -515,9 +516,9 @@ span{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
-.box4{
+/* .box4{
     width: 235px;
     height: 250px;
     background-color: var(--white);
@@ -526,7 +527,7 @@ span{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+} */
 
 /* QUINTA PAGINA (AVALIAÇÕES) */
 
