@@ -1,6 +1,5 @@
-const URL_AVALIACOES = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22avaliacoes%22%5D+%0A%7B%0A++nota_avaliacao%2C+instagram_usuario%2C+texto_avaliacao%2C+nome_avaliacao%0A%7D+%5B0...6%5D%0A++%7C+order%28nota_avaliacao+desc%29";
+const URL_AVALIACOES = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22avaliacoes%22%5D+%0A%7B%0A++nota_avaliacao%2C+instagram_usuario%2C+texto_avaliacao%2C+nome_avaliacao%2C%22foto_avaliacao%22%3A+foto_avaliacao.asset-%3Eurl%0A%0A%7D+%5B0...6%5D%0A++%7C+order%28nota_avaliacao+desc%29";
 const testimonialBoxContainer = document.querySelector("div.testimonial-box-container");
-
 
 fetch(URL_AVALIACOES, {
     method: "GET",
@@ -37,8 +36,8 @@ fetch(URL_AVALIACOES, {
             profile.appendChild(profileImg);
 
             var img = document.createElement("img"); //alterar dps
+            img.setAttribute("src",  task.foto_avaliacao);
             img.alt = "imagem usuário";
-            img.url = ./assets/img/perfil.jpg;
             profileImg.appendChild(img);
 
             var nameUser = document.createElement("div");
@@ -63,59 +62,64 @@ fetch(URL_AVALIACOES, {
             boxEstrela2.classList.add("box-estrela");
             reviews.appendChild(boxEstrela2);
 
-            //falta notas
-            
-                var estrela = document.createElement("i");
-                estrela.classList.add("fas fa-star");
-                boxEstrela2.appendChild(estrela);
-                boxEstrela2.appendChild(estrela);
-                boxEstrela2.appendChild(estrela);
-                boxEstrela2.appendChild(estrela);
-                boxEstrela2.appendChild(estrela);
-            
-            
+            var estrela = document.createElement("i");
+            var estrela1 = document.createElement("i");
+            var estrela2 = document.createElement("i");
+            var estrela3 = document.createElement("i");
+            var estrela4 = document.createElement("i");
 
+            nota = task.nota_avaliacao;
+
+            switch (nota){
+                case 0:
+                    estrela.classList.add("fa-regular", "fa-star");
+                    estrela1.classList.add("fa-regular", "fa-star");
+                    estrela2.classList.add("fa-regular", "fa-star");
+                    estrela3.classList.add("fa-regular", "fa-star");
+                    estrela4.classList.add("fa-regular", "fa-star");
+                    break;
+                case 1:
+                    estrela.classList.add("fas","fa-star");
+                    estrela1.classList.add("fa-regular", "fa-star");
+                    estrela2.classList.add("fa-regular", "fa-star");
+                    estrela3.classList.add("fa-regular", "fa-star");
+                    estrela4.classList.add("fa-regular", "fa-star");
+                    break;
+                case 2:
+                    estrela.classList.add("fas","fa-star");
+                    estrela1.classList.add("fas","fa-star");
+                    estrela2.classList.add("fa-regular", "fa-star");
+                    estrela3.classList.add("fa-regular", "fa-star");
+                    estrela4.classList.add("fa-regular", "fa-star");
+                    break;
+                case 3:
+                    estrela.classList.add("fas","fa-star");
+                    estrela1.classList.add("fas","fa-star");
+                    estrela2.classList.add("fas","fa-star");
+                    estrela3.classList.add("fa-regular", "fa-star");
+                    estrela4.classList.add("fa-regular", "fa-star");
+                    break;
+                case 4:
+                    estrela.classList.add("fas","fa-star");
+                    estrela1.classList.add("fas","fa-star");
+                    estrela2.classList.add("fas","fa-star");
+                    estrela3.classList.add("fas","fa-star");
+                    estrela4.classList.add("fa-regular", "fa-star");
+                    break;
+                case 5:
+                    estrela.classList.add("fas","fa-star");
+                    estrela1.classList.add("fas","fa-star");
+                    estrela2.classList.add("fas","fa-star");
+                    estrela3.classList.add("fas","fa-star");
+                    estrela4.classList.add("fas","fa-star");
+                    break;
+            }
+
+            boxEstrela2.appendChild(estrela);
+            boxEstrela2.appendChild(estrela1);
+            boxEstrela2.appendChild(estrela2);
+            boxEstrela2.appendChild(estrela3);
+            boxEstrela2.appendChild(estrela4);
         });
     })
     .catch(console.error);
-
-{/* <div id="testimonials">
-                
-<!--testimonials-box-container------>
-<div class="testimonial-box-container">
-    <!--BOX-1-------------->
-    <div class="testimonial-box">
-        <!--top------------------------->
-        <div class="box-top">
-            <!--profile----->
-            <div class="profile">
-                <!--img---->
-                <div class="profile-img">
-                    <img src="./assets/img/perfil.jpg" alt="imagem usuário">
-                </div>
-                <!--name-and-username-->
-                <div class="name-user">
-                    <strong class="nome_avaliacao">Maria</strong>
-                    <span class="usuario_avaliacao">@maria</span>
-                    <div class="box-estrela"></div>
-                </div>
-            </div>
-            <!--reviews------>
-            <div class="reviews">
-                <div class="box-estrela">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fa-regular fa-star"></i><!--Empty star-->
-                </div>
-            </div>
-        </div>
-        
-        <div class="client-comment">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quos earum magnam, at nulla impedit atque quae rem, quo illum ex nemo magni fugit possimus esse iure voluptatem omnis quia.</p>
-        </div>
-    </div>
-</div>
-
-</div>  */}

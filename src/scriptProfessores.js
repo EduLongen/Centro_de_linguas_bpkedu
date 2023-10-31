@@ -1,4 +1,4 @@
-const URL_PROFESSORES = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27professores%27%5D%7B%0A++%22imageUrl%22%3A+imagem.asset-%3Eurl+%2B+%22%3Fh%3D250%26w%3D250%26blur%3D50%22%2C+nome%2C+disciplina%0A%7D+%5B0...6%5D";
+const URL_PROFESSORES = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%27professores%27%5D%7B%0A++%22imageUrl%22%3A+imagem.asset-%3Eurl+%2B+%22%3Fh%3D250%26w%3D250%22%2C+nome%2C+disciplina%0A%7D+%5B0...6%5D";
 
 const professores = document.querySelector(".caixas");
 
