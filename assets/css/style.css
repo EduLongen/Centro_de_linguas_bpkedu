@@ -559,15 +559,30 @@ span{
     align-items: center;
     flex-wrap: wrap;
     width:100%;
+    
 }
 
 .testimonial-box{
-    width:500px;
+    width:460px;
     box-shadow: 1px 1px 3px var(--white);
     background-color: var(--white);
     border-radius: 0px 30px 30px 30px;
     padding: 20px;
     margin: 15px;
+    
+}
+
+.client-comment p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 400px;
+}
+
+.client-comment p:hover{
+    white-space:normal;
+    text-overflow: inherit;
+    overflow: visible;
 }
 
 .profile-img{

@@ -62,64 +62,19 @@ fetch(URL_AVALIACOES, {
             boxEstrela2.classList.add("box-estrela");
             reviews.appendChild(boxEstrela2);
 
-            var estrela = document.createElement("i");
-            var estrela1 = document.createElement("i");
-            var estrela2 = document.createElement("i");
-            var estrela3 = document.createElement("i");
-            var estrela4 = document.createElement("i");
-
             nota = task.nota_avaliacao;
 
-            switch (nota){
-                case 0:
+            for(var i = 0; i < 5; i++){
+                var estrela = document.createElement("i");
+                if(nota <= 0){
                     estrela.classList.add("fa-regular", "fa-star");
-                    estrela1.classList.add("fa-regular", "fa-star");
-                    estrela2.classList.add("fa-regular", "fa-star");
-                    estrela3.classList.add("fa-regular", "fa-star");
-                    estrela4.classList.add("fa-regular", "fa-star");
-                    break;
-                case 1:
+                }else{
                     estrela.classList.add("fas","fa-star");
-                    estrela1.classList.add("fa-regular", "fa-star");
-                    estrela2.classList.add("fa-regular", "fa-star");
-                    estrela3.classList.add("fa-regular", "fa-star");
-                    estrela4.classList.add("fa-regular", "fa-star");
-                    break;
-                case 2:
-                    estrela.classList.add("fas","fa-star");
-                    estrela1.classList.add("fas","fa-star");
-                    estrela2.classList.add("fa-regular", "fa-star");
-                    estrela3.classList.add("fa-regular", "fa-star");
-                    estrela4.classList.add("fa-regular", "fa-star");
-                    break;
-                case 3:
-                    estrela.classList.add("fas","fa-star");
-                    estrela1.classList.add("fas","fa-star");
-                    estrela2.classList.add("fas","fa-star");
-                    estrela3.classList.add("fa-regular", "fa-star");
-                    estrela4.classList.add("fa-regular", "fa-star");
-                    break;
-                case 4:
-                    estrela.classList.add("fas","fa-star");
-                    estrela1.classList.add("fas","fa-star");
-                    estrela2.classList.add("fas","fa-star");
-                    estrela3.classList.add("fas","fa-star");
-                    estrela4.classList.add("fa-regular", "fa-star");
-                    break;
-                case 5:
-                    estrela.classList.add("fas","fa-star");
-                    estrela1.classList.add("fas","fa-star");
-                    estrela2.classList.add("fas","fa-star");
-                    estrela3.classList.add("fas","fa-star");
-                    estrela4.classList.add("fas","fa-star");
-                    break;
+                }
+                nota--;
+                
+                boxEstrela2.appendChild(estrela);
             }
-
-            boxEstrela2.appendChild(estrela);
-            boxEstrela2.appendChild(estrela1);
-            boxEstrela2.appendChild(estrela2);
-            boxEstrela2.appendChild(estrela3);
-            boxEstrela2.appendChild(estrela4);
         });
     })
     .catch(console.error);
