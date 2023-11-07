@@ -1,4 +1,4 @@
-const URL_AVALIACOES = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22avaliacoes%22%5D+%0A%7B%0A++nota_avaliacao%2C+instagram_usuario%2C+texto_avaliacao%2C+nome_avaliacao%2C%22foto_avaliacao%22%3A+foto_avaliacao.asset-%3Eurl%0A%0A%7D+%5B0...6%5D%0A++%7C+order%28nota_avaliacao+desc%29";
+const URL_AVALIACOES = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type+%3D%3D+%22avaliacoes%22%5D+%7C+order%28nota_avaliacao+desc%29%5B0...6%5D%0A%7B%0A++nota_avaliacao%2C+instagram_usuario%2C+texto_avaliacao%2C+nome_avaliacao%2C%22foto_avaliacao%22%3A+foto_avaliacao.asset-%3Eurl%0A%0A%7D+%0A++";
 const testimonialBoxContainer = document.querySelector("div.testimonial-box-container");
 
 fetch(URL_AVALIACOES, {
@@ -35,7 +35,7 @@ fetch(URL_AVALIACOES, {
             profileImg.classList.add("profile-img");
             profile.appendChild(profileImg);
 
-            var img = document.createElement("img"); //alterar dps
+            var img = document.createElement("img"); 
             img.setAttribute("src",  task.foto_avaliacao);
             img.alt = "imagem usuário";
             profileImg.appendChild(img);

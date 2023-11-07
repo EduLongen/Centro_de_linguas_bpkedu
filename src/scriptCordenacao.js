@@ -1,4 +1,4 @@
-const URL_CORDENACAO = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%3D%3D%22cordenacao%22%5D+%7B%0A++_id%2C+%0A++nome_cordenacao%2C%0A++%22foto_cordenacao%22%3A+foto_cordenacao.asset-%3Eurl%2C%0A%7D%0A%7C+order%28_updatedAt+asc%29%5B0%5D";
+const URL_CORDENACAO = "https://65nsvke1.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%3D%3D%22cordenacao%22%5D+%7C+order%28_updatedAt+desc%29%5B0%5D+%7B%0A++_id%2C+%0A++nome_cordenacao%2C%0A++%22foto_cordenacao%22%3A+foto_cordenacao.asset-%3Eurl%2C%0A%7D";
 
 fetch(URL_CORDENACAO, {
     method: "GET",
