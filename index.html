@@ -51,9 +51,12 @@
                     expandindo horizonte e conectando culturas!
                 </p>
 
-                <form action="subscribe">
-                    <input type="text" placeholder="Nome completo">
-                    <input type="email" placeholder="E-mail">
+                <form id="mailTo">
+                    
+                    <input type="text" id="nome" name="nome" placeholder="Nome">
+
+                    <input type="email" id="email" name="email" placeholder="E-mail">
+
                     <select name="cursos" id="cursos">
                         <option value="selecione">Escolha um Curso</option>
                     </select>
@@ -61,6 +64,7 @@
                     <input type="submit" value="ENVIAR">
 
                 </form>
+
             </div>
         </section>
 
@@ -262,6 +266,7 @@
     </footer>
 
     <script src="./src/goToTop.js"></script>
+    <script src="./src/scriptMail.js"></script>
     <script src="./src/scriptCordenacao.js"></script>
     <script src="./src/scriptCursos.js"></script>
     <script src="./src/scriptAvaliacoes.js"></script>
