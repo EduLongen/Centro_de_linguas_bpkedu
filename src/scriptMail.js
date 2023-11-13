@@ -1,3 +1,5 @@
+/* CODIGO NÃO MAIS UTILIZADO
+
 const formulario = document.getElementById('mailTo');
 
 formulario.addEventListener('submit', function (event) {
@@ -12,3 +14,5 @@ formulario.addEventListener('submit', function (event) {
     document.location.href = `mailto:${destinatario}?&subject= Interesse em curso de Linguas! &body= Olá sou o(a) ${nome} e gostaria de me inscrever para o curso de ${cursos} `;
 
 });
+
+*/

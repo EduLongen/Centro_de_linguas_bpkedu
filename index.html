@@ -51,18 +51,18 @@
                     expandindo horizonte e conectando culturas!
                 </p>
 
-                <form id="mailTo">
-                    
-                    <input type="text" id="nome" name="nome" placeholder="Nome">
-
-                    <input type="email" id="email" name="email" placeholder="E-mail">
-
-                    <select name="cursos" id="cursos">
+                <form action="https://api.staticforms.xyz/submit" method="post">
+                    <input type="text" name="name" placeholder="Nome">
+                    <input type="text" name="email" placeholder="E-mail" />
+                    <select name="message" id="cursos">
                         <option value="selecione">Escolha um Curso</option>
                     </select>
-
-                    <input type="submit" value="ENVIAR">
-
+                    <input type="text" name="honeypot" style="display:none">
+                    <input type="hidden" name="accessKey" value="b4e71dc7-0a0c-4bdb-9642-e9befd02e4b7">
+                    <input type="hidden" name="subject" value="Contact us from - example.com" />
+                    <input type="hidden" name="replyTo" value="@">
+                    <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/index.html">
+                    <input type="submit" value="ENVIAR" />
                 </form>
 
             </div>
